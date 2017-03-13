@@ -77,24 +77,115 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="574227592370200" title="End">
+            <sub-events>
+                <event-block sid="722594829761365">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="427363415404261" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="668777214812886" type="System">
+                            <param id="0" name="Layer">&quot;End&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="647478022687747">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="609870706003479" type="Touch">
+                            <param id="0" name="Object">restartButton</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="422188640236263" type="System">
+                            <param id="0" name="Layer">&quot;End&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="-9" name="Is visible" sid="413326324281636" type="restartButton" />
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="350625645843416" type="System" />
+                        <action id="-21" name="Reset global variables" sid="595935117916175" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="886364126329948">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="270892086548611" type="Touch">
+                            <param id="0" name="Object">titleButton</param>
+                        </condition>
+                        <condition id="-9" name="Layer is visible" sid="448495874681732" type="System">
+                            <param id="0" name="Layer">&quot;End&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="-9" name="Is visible" sid="124226093536581" type="titleButton" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="626727532152507" type="System">
+                            <param id="0" name="Layout">Title</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="317872613625974">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="428917947614346">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="139194928990405" title="Home Button">
             <sub-events>
                 <event-block sid="983261663852035">
                     <conditions />
                     <actions />
                 </event-block>
+                <comment>PAUSE</comment>
                 <event-block sid="125152586237081">
                     <conditions>
-                        <condition id="17" name="On tap object" sid="184335448369715" type="Touch">
+                        <condition id="3" name="On touched object" sid="184335448369715" type="Touch">
                             <param id="0" name="Object">menuButtonHome</param>
                         </condition>
+                        <condition id="-9" name="Is visible" sid="467109666790843" type="menuButtonHome" />
                     </conditions>
                     <actions>
-                        <action id="-2" name="Go to layout" sid="905183702433019" type="System">
+                        <action disabled="1" id="-2" name="Go to layout" sid="905183702433019" type="System">
                             <param id="0" name="Layout">Title</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="446790602086290" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="559200440258295" type="System">
+                            <param id="0" name="Layer">&quot;End&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="165400890721561" type="menuButtonHome">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="307110964721256" type="System">
+                            <param id="0" name="Time scale">0</param>
                         </action>
                     </actions>
                 </event-block>
+                <comment>UNPAUSE</comment>
+                <event-block sid="948597324421715">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="620876997627605" type="Touch">
+                            <param id="0" name="Object">endBG</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="678651861467026" type="endBG" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="868575732170895" type="System">
+                            <param id="0" name="Layer">&quot;End&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="625269706880936" type="menuButtonHome">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="945557910681667" type="System">
+                            <param id="0" name="Time scale">1.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
                 <event-block sid="108689443326511">
                     <conditions>
                         <condition id="4" name="Is touching object" sid="156839884706733" type="Touch">
@@ -120,10 +211,6 @@
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="339549144777712">
-                    <conditions />
-                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
