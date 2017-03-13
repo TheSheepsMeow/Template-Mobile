@@ -3,8 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game</name>
     <events>
+        <include>LocalStorage</include>
         <variable constant="0" name="score" sid="438315306292690" static="0" type="number">0</variable>
-        <variable constant="0" name="highScore" sid="288408401537732" static="0" type="number">0</variable>
+        <variable constant="0" name="highScore" sid="288408401537732" static="0" type="number">1</variable>
         <event-group description="Activate / deactivate this group as needed." sid="303387383532753" title="Debug">
             <sub-events>
                 <event-block sid="626922229723868">
@@ -14,8 +15,8 @@
                             <param id="0" name="Layer">&quot;Debug&quot;</param>
                             <param id="1" name="Visibility">1</param>
                         </action>
-                        <action id="0" name="Set text" sid="683932887056889" type="textDebug">
-                            <param id="0" name="Text">&quot;score: &quot; &amp; score &amp; newline &amp; &quot;highScore: &quot; &amp; highScore</param>
+                        <action id="0" name="Set text" sid="686902598453159" type="textDebug">
+                            <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
                         </action>
                     </actions>
                 </event-block>
@@ -76,88 +77,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="837724335655810" title="LocalStorage">
-            <sub-events>
-                <event-block sid="849941697179448">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="929182983854922" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Check item exists" sid="563887492600585" type="LocalStorage">
-                            <param id="0" name="Key">&quot;highScore_key&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="528614849324519">
-                    <conditions>
-                        <condition id="9" name="On item exists" sid="984367734336244" type="LocalStorage">
-                            <param id="0" name="Key">&quot;highScore_key&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="1" name="Get item" sid="409193178757277" type="LocalStorage">
-                            <param id="0" name="Key">&quot;highScore_key&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="712120785712310">
-                    <conditions>
-                        <condition id="1" name="On item get" sid="170006001797317" type="LocalStorage">
-                            <param id="0" name="Key">&quot;highScore_key&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="357181264850913" type="System">
-                            <param id="0" name="Variable">highScore</param>
-                            <param id="1" name="Value">LocalStorage.ItemValue</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="164440270578240">
-                    <conditions>
-                        <condition id="10" name="On item missing" sid="634334654598053" type="LocalStorage">
-                            <param id="0" name="Key">&quot;highScore_key&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="374741970495158" type="System">
-                            <param id="0" name="Variable">highScore</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="213361136880238">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="158001101714027" type="System">
-                            <param id="0" name="Variable">score</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">highScore</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="517092549880773" type="System">
-                            <param id="0" name="Variable">highScore</param>
-                            <param id="1" name="Value">score</param>
-                        </action>
-                        <action id="0" name="Set item" sid="488473500456334" type="LocalStorage">
-                            <param id="0" name="Key">&quot;highScore_key&quot;</param>
-                            <param id="1" name="Value">highScore</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="102449994881805">
-                    <conditions />
-                    <actions />
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="139194928990405" title="Group5">
+        <event-group description="" sid="139194928990405" title="Home Button">
             <sub-events>
                 <event-block sid="983261663852035">
-                    <conditions />
-                    <actions />
-                </event-block>
-                <event-block sid="203909293896407">
                     <conditions />
                     <actions />
                 </event-block>
@@ -173,11 +95,118 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="568919461548428">
+                <event-block sid="108689443326511">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="156839884706733" type="Touch">
+                            <param id="0" name="Object">menuButtonHome</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="589440567776361" type="menuButtonHome">
+                            <param id="0" name="Animation">&quot;Pressed&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="570922774680863">
+                    <conditions>
+                        <condition id="4" inverted="1" name="Is touching object" sid="793919140717541" type="Touch">
+                            <param id="0" name="Object">menuButtonHome</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="293704215814262" type="menuButtonHome">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="339549144777712">
                     <conditions />
                     <actions />
                 </event-block>
-                <event-block sid="339549144777712">
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="276784329635890" title="Score Display">
+            <sub-events>
+                <event-block sid="797422079817432">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Set text" sid="874256685827727" type="textScore">
+                            <param id="0" name="Text">&quot;score: &quot; &amp; score &amp; newline &amp; &quot;high score: &quot; &amp; highScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="716942432924939" title="Group 1">
+            <sub-events>
+                <event-block sid="660050906061942">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="971828888100908">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="955629360883714" type="Touch">
+                            <param id="0" name="Object">thesheepsmeow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="300553998901440" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="263029380248975">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="901494045263555" title="Group 2">
+            <sub-events>
+                <event-block sid="749930374029439">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="786690291603919">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="695100518924080">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="791820689614525" title="Group 3">
+            <sub-events>
+                <event-block sid="873066714251105">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="275860810294666">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="245887690147196">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="604012300532070" title="Group 4">
+            <sub-events>
+                <event-block sid="219831161095762">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="906784182713918">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="849201712276636">
                     <conditions />
                     <actions />
                 </event-block>

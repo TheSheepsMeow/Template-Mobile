@@ -4,7 +4,7 @@
     <description></description>
     <version>0.1</version>
     <author>The Sheep&apos;s Meow</author>
-    <author-email></author-email>
+    <author-email>community@thesheepsmeow.com</author-email>
     <author-website>http://www.thesheepsmeow.com</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>1vk5z1y1jajy9</unique-id>
@@ -103,7 +103,10 @@
             <object-type name="muteButton" sid="527933881239542">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="639706422790771" speed="5">
+                    <animation framecount="1" loop="0" name="unmuted" pingpong="0" repeatcount="1" repeatto="0" sid="639706422790771" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="muted" pingpong="0" repeatcount="1" repeatto="0" sid="291172181559818" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -122,6 +125,10 @@
                 </animation-folder>
             </object-type>
             <object-type name="textTitle2" sid="229950994530590">
+                <plugin id="Spritefont2" />
+                <texture />
+            </object-type>
+            <object-type name="textScore" sid="569338947096204">
                 <plugin id="Spritefont2" />
                 <texture />
             </object-type>
@@ -158,12 +165,13 @@
     <layout-folder>
         <layout>Loader.xml</layout>
         <layout>Title.xml</layout>
-        <layout>Layout 1.xml</layout>
+        <layout>Game.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Game.xml</event-sheet>
         <event-sheet>Title.xml</event-sheet>
         <event-sheet>Loader.xml</event-sheet>
+        <event-sheet>LocalStorage.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="0">
