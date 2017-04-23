@@ -101,7 +101,10 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-21" name="Reset global variables" sid="399770121009713" type="System" />
+                        <action id="-9" name="Set value" sid="423754738878872" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                         <action id="-2" name="Go to layout" sid="339198342239611" type="System">
                             <param id="0" name="Layout">Game</param>
                         </action>
@@ -176,19 +179,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action disabled="1" id="3" name="Clear storage" sid="326139199082904" type="LocalStorage" />
-                        <action disabled="1" id="-9" name="Set value" sid="685742494775742" type="System">
-                            <param id="0" name="Variable">score</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action disabled="1" id="-9" name="Set value" sid="592441114190645" type="System">
-                            <param id="0" name="Variable">highScore</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action disabled="1" id="0" name="Call function" sid="387234539634293" type="Function">
-                            <param id="0" name="Name">&quot;setHighScore&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
                         <action id="-16" name="Wait" sid="559645650741134" type="System">
                             <param id="0" name="Seconds">0.1</param>
                         </action>
@@ -259,32 +249,6 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block disabled="1" sid="224789100544250">
-                    <conditions>
-                        <condition id="4" name="Is touching object" sid="958897951582521" type="Touch">
-                            <param id="0" name="Object">menuButtonReset</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="786533796353989" type="menuButtonReset">
-                            <param id="0" name="Animation">&quot;Pressed&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="601529304476892">
-                    <conditions>
-                        <condition id="4" inverted="1" name="Is touching object" sid="279049672936580" type="Touch">
-                            <param id="0" name="Object">menuButtonReset</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="406348700405070" type="menuButtonReset">
-                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
-                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="629693637456221" title="More Games">
@@ -296,9 +260,9 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="8" name="Open URL in new window" sid="876448990432300" type="Browser">
-                            <param id="0" name="URL">&quot;http://www.thesheepsmeow.com/&quot;</param>
-                            <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                        <action id="7" name="Go to URL" sid="876448990432300" type="Browser">
+                            <param id="0" name="URL">&quot;http://www.thesheepsmeow.com/html5&quot;</param>
+                            <param id="1" name="Target">2</param>
                         </action>
                     </actions>
                 </event-block>

@@ -98,7 +98,6 @@
                         <condition id="-9" name="Layer is visible" sid="422188640236263" type="System">
                             <param id="0" name="Layer">&quot;End&quot;</param>
                         </condition>
-                        <condition disabled="1" id="-9" name="Is visible" sid="413326324281636" type="restartButton" />
                     </conditions>
                     <actions>
                         <action id="-26" name="Restart layout" sid="350625645843416" type="System" />
@@ -113,7 +112,6 @@
                         <condition id="-9" name="Layer is visible" sid="448495874681732" type="System">
                             <param id="0" name="Layer">&quot;End&quot;</param>
                         </condition>
-                        <condition disabled="1" id="-9" name="Is visible" sid="124226093536581" type="titleButton" />
                     </conditions>
                     <actions>
                         <action id="-2" name="Go to layout" sid="626727532152507" type="System">
@@ -161,6 +159,14 @@
                         </action>
                         <action id="-13" name="Set time scale" sid="307110964721256" type="System">
                             <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="-14" name="Set object time scale" sid="938406359745485" type="System">
+                            <param id="0" name="Object">titleButton</param>
+                            <param id="1" name="Time scale">1.0</param>
+                        </action>
+                        <action id="-14" name="Set object time scale" sid="738477671375863" type="System">
+                            <param id="0" name="Object">restartButton</param>
+                            <param id="1" name="Time scale">1.0</param>
                         </action>
                     </actions>
                 </event-block>
