@@ -26,57 +26,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" disabled="1" sid="444648493573769" title="Orientation">
-            <sub-events>
-                <event-block disabled="1" sid="268189506992503">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="413434179070956" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-4" name="Set layer visible" sid="335068312560207" type="System">
-                            <param id="0" name="Layer">&quot;Orientation&quot;</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="426298831028191">
-                    <conditions>
-                        <condition id="16" name="Is portrait/landscape" sid="828371565456451" type="Browser">
-                            <param id="0" name="Orientation">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-13" name="Set time scale" sid="421695231247150" type="System">
-                            <param id="0" name="Time scale">1</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="398034119765546" type="System">
-                            <param id="0" name="Layer">&quot;Orientation&quot;</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="637691803461691">
-                    <conditions>
-                        <condition id="16" name="Is portrait/landscape" sid="837569125396780" type="Browser">
-                            <param id="0" name="Orientation">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-13" name="Set time scale" sid="481457925386423" type="System">
-                            <param id="0" name="Time scale">0</param>
-                        </action>
-                        <action id="-4" name="Set layer visible" sid="955825425581759" type="System">
-                            <param id="0" name="Layer">&quot;Orientation&quot;</param>
-                            <param id="1" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="864172174641243">
-                    <conditions />
-                    <actions />
-                </event-block>
-            </sub-events>
-        </event-group>
         <event-group description="" sid="574227592370200" title="End">
             <sub-events>
                 <event-block sid="722594829761365">
@@ -248,6 +197,13 @@
                         <action id="-10" name="Add to" sid="300553998901440" type="System">
                             <param id="0" name="Variable">score</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="874057648628004" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">&quot;Start_sound_&quot; &amp; choose(1,2,3,4,5)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>

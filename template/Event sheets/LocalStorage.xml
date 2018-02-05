@@ -5,6 +5,7 @@
     <events>
         <event-group description="" sid="525973287203538" title="LocalStorage">
             <sub-events>
+                <comment>replace &quot;highScore_key&quot; with something unique to this game, e.g. &quot;highScore_key_thisgame&quot;</comment>
                 <event-block sid="424309754711947">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="819067861483989" type="System" />
